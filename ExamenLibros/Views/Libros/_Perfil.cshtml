@@ -1,0 +1,17 @@
+﻿
+<div class="row">
+    <div class="col-5">
+        <img class="w-100" src="~/images/@Context.User.FindFirst("Foto").Value" />
+    </div>
+    <div class="col-7">
+        <h2>USERNAME: @Context.User.FindFirst("Nombre").Value</h2>
+        <h3>Nombre: @Context.User.FindFirst("Nombre").Value</h3>
+        <h3>Apellido: @Context.User.FindFirst("Apellidos").Value</h3>
+        <h3>Email: @Context.User.Identity.Name</h3>
+        <a asp-controller="Libros" asp-action="ComprasUsuario"
+           class="btn btn-primary mt-3 w-100">
+            Ver mis pedidos
+        </a>
+    </div>
+
+</div>

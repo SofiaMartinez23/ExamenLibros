@@ -1,0 +1,31 @@
+﻿
+<partial name="_NumeroCompras" />
+@if (!Context.User.Identity.IsAuthenticated)
+{
+    <li class="nav-item">
+        <a asp-controller="Libros"
+           asp-action="Index"
+           class="nav-link">
+            Login
+        </a>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a asp-controller="Libros"
+           asp-action="Index"
+           class="nav-link">
+            <img class="rounded-circle" style="width:25px;height:25px"
+                 src="~/images/@Context.User.FindFirst("Foto").Value" />
+            Hola, @Context.User.FindFirst("Nombre").Value
+        </a>
+    </li>
+    <li class="nav-item">
+        <a asp-controller="Managed"
+           asp-action="Logout"
+           class="nav-link">
+            Cerrar sesión
+        </a>
+    </li>
+}

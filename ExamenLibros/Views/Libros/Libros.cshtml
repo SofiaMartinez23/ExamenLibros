@@ -1,0 +1,27 @@
+﻿@model List<Libro>
+
+<h1>Libros</h1>
+
+<div class="row">
+    @foreach (Libro libro in Model)
+    {
+        <div class="col-4">
+            <div class="card">
+                <img class="card-img-top" src="~/images/@libro.Portada" />
+                <div class="card-body">
+                    <h5 class="card-title">@libro.Titulo</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <a class="btn btn-primary w-100"
+                               asp-controller="Libros" asp-action="Details"
+                               asp-route-idlibro="@libro.IdLibro">
+                                Detalles
+                            </a>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
